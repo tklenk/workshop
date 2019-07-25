@@ -91,6 +91,21 @@ const play = async () => {
   };
 
   animate();
+  window.addEventListener('keyup', event => {
+    console.log(event)
+    if ( event.code === "ArrowRight") {
+      player.x = player.x + 1;
+    }
+    if ( event.code === "ArrowLeft") {
+      player.x = player.x - 1;
+    }
+    if ( event.code === "ArrowUp") {
+      player.y = player.y - 1;
+    }
+    if ( event.code === "ArrowDown") {
+      player.y = player.y + 1;
+    }
+  })
 };
 
 play();
