@@ -92,7 +92,11 @@ const play = async () => {
 
   animate();
   window.addEventListener('keyup', event => {
-    console.log(event)
+    const currentPosition = {
+      x: player.x,
+      y: player.y
+    }
+    // console.log(event)
     if ( event.code === "ArrowRight") {
       player.x = player.x + 1;
     }
@@ -104,6 +108,12 @@ const play = async () => {
     }
     if ( event.code === "ArrowDown") {
       player.y = player.y + 1;
+    }
+    if (player.x < 0 || player.x > 2 ) {
+      player.x = currentPosition.x
+    }
+    if (player.y < 0 || player.y > 2 ) {
+      player.y = currentPosition.y
     }
   })
 };
